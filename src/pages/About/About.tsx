@@ -1,4 +1,5 @@
 import { Asterisk, Banknote, Eye, LocateFixed, MapPin, MoveRight, Rocket, Send } from "lucide-react";
+import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100">
@@ -47,7 +48,7 @@ const About = () => {
 
                   {/* To Input */}
                   <div className="flex-1 flex items-center px-4 gap-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-transparent focus-within:border-blue-500 transition-all py-3 md:py-0">
-                    <span className="material-symbols-outlined text-blue-500"><Send size={28} strokeWidth={2.75} absoluteStrokeWidth /></span>
+                    <span className="text-blue-500"><Send size={28} strokeWidth={2.75} absoluteStrokeWidth /></span>
                     <div className="flex flex-col items-start w-full">
                       <input
                         className="w-full border-none outline-none focus:ring-0 bg-transparent text-sm font-semibold placeholder:text-slate-400 p-0 text-slate-900 dark:text-white"
@@ -58,10 +59,15 @@ const About = () => {
                   </div>
 
                   {/* Button */}
-                  <button className="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2">
+                  <Link
+                    to="/login"
+                    className="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold 
+                              hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 
+                              transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  >
                     <span>Compare Rates</span>
-                    <span className="material-symbols-outlined text-sm"><MoveRight /></span>
-                  </button>
+                    <MoveRight className="w-4 h-4" />
+                  </Link>
                 </div>
 
                 {/* Trusted By */}
@@ -210,13 +216,21 @@ const About = () => {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="rounded-xl bg-blue-600 px-10 py-5 text-lg font-bold text-white hover:bg-blue-500 transition-all shadow-xl shadow-blue-300/40">
-                  Start Shipping Now
-                </button>
+                <Link
+                    to="/start-shipping"
+                    className="rounded-xl bg-blue-600 px-10 py-5 text-lg font-bold text-white 
+                              hover:bg-blue-500 transition-all shadow-xl shadow-blue-300/40 cursor-pointer"
+                  >
+                    Start Shipping Now
+                  </Link>
 
-                <button className="rounded-xl bg-white/10 px-10 py-5 text-lg font-bold text-white backdrop-blur-md hover:bg-white/20 border border-white/20 transition-all">
-                  Book a Demo
-                </button>
+                  <Link
+                    to="/book-demo"
+                    className="rounded-xl bg-white/10 px-10 py-5 text-lg font-bold text-white 
+                              backdrop-blur-md hover:bg-white/20 border border-white/20 transition-all cursor-pointer"
+                  >
+                    Book a Demo
+                  </Link>
               </div>
             </div>
           </div>
