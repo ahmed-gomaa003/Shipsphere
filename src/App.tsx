@@ -1,7 +1,9 @@
-import AppRouter from "@/setup/router";
-
+import About from "./pages/About/About.tsx";
 function App() {
-  return <AppRouter />;
+  return <>
+  {/* <AppRouter /> */}
+  <About/>
+  </>
 }
 
 export default App;
